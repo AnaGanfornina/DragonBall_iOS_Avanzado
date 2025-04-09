@@ -17,6 +17,14 @@
 		A15DC5C62DA5744600966AC3 /* NetworingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5C52DA5743B00966AC3 /* NetworingError.swift */; };
 		A15DC5F12DA584DA00966AC3 /* LoginApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5F02DA584C600966AC3 /* LoginApiRequest.swift */; };
 		A15DC5F32DA58F6D00966AC3 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5F22DA58F6800966AC3 /* ApiProvider.swift */; };
+		A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC6C02DA6746900966AC3 /* HeroListView.xib */; };
+		A15DC6C32DA6781100966AC3 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6C22DA6781100966AC3 /* HeroListViewController.swift */; };
+		A15DC6C72DA67A6100966AC3 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6C62DA67A5F00966AC3 /* Hero.swift */; };
+		A15DC6C92DA67B9000966AC3 /* HeroesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6C82DA67B8900966AC3 /* HeroesListViewModel.swift */; };
+		A15DC6CD2DA6800E00966AC3 /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC6CC2DA6800D00966AC3 /* HeroCell.xib */; };
+		A15DC6CE2DA6800E00966AC3 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6CB2DA6800D00966AC3 /* HeroCell.swift */; };
+		A15DC6D02DA68D7200966AC3 /* GetHeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6CF2DA68D7200966AC3 /* GetHeroesUseCase.swift */; };
+		A15DC6D32DA695EF00966AC3 /* HeroDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6D22DA695EF00966AC3 /* HeroDTO.swift */; };
 		A18598DF2DA30719001DCB1B /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18598DE2DA30719001DCB1B /* SplashView.xib */; };
 		A18598F42DA30782001DCB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18598ED2DA30782001DCB1B /* AppDelegate.swift */; };
 		A18598F52DA30782001DCB1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18598F22DA30782001DCB1B /* SceneDelegate.swift */; };
@@ -58,6 +66,14 @@
 		A15DC5C52DA5743B00966AC3 /* NetworingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworingError.swift; sourceTree = "<group>"; };
 		A15DC5F02DA584C600966AC3 /* LoginApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiRequest.swift; sourceTree = "<group>"; };
 		A15DC5F22DA58F6800966AC3 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		A15DC6C02DA6746900966AC3 /* HeroListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListView.xib; sourceTree = "<group>"; };
+		A15DC6C22DA6781100966AC3 /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
+		A15DC6C62DA67A5F00966AC3 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		A15DC6C82DA67B8900966AC3 /* HeroesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewModel.swift; sourceTree = "<group>"; };
+		A15DC6CB2DA6800D00966AC3 /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		A15DC6CC2DA6800D00966AC3 /* HeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCell.xib; sourceTree = "<group>"; };
+		A15DC6CF2DA68D7200966AC3 /* GetHeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroesUseCase.swift; sourceTree = "<group>"; };
+		A15DC6D22DA695EF00966AC3 /* HeroDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDTO.swift; sourceTree = "<group>"; };
 		A18597D42DA30318001DCB1B /* DragonBall_iOS_Avanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBall_iOS_Avanzado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18597EA2DA3031A001DCB1B /* DragonBall_iOS_AvanzadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBall_iOS_AvanzadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18597F42DA3031A001DCB1B /* DragonBall_iOS_AvanzadoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBall_iOS_AvanzadoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +139,51 @@
 			path = APIRequests;
 			sourceTree = "<group>";
 		};
+		A15DC6BF2DA6740200966AC3 /* HeroList */ = {
+			isa = PBXGroup;
+			children = (
+				A15DC6CA2DA67FBA00966AC3 /* Cells */,
+				A15DC6C82DA67B8900966AC3 /* HeroesListViewModel.swift */,
+				A15DC6C02DA6746900966AC3 /* HeroListView.xib */,
+				A15DC6C22DA6781100966AC3 /* HeroListViewController.swift */,
+			);
+			path = HeroList;
+			sourceTree = "<group>";
+		};
+		A15DC6C42DA67A4200966AC3 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A15DC6CF2DA68D7200966AC3 /* GetHeroesUseCase.swift */,
+				A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A15DC6C52DA67A5200966AC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15DC6C62DA67A5F00966AC3 /* Hero.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A15DC6CA2DA67FBA00966AC3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A15DC6CB2DA6800D00966AC3 /* HeroCell.swift */,
+				A15DC6CC2DA6800D00966AC3 /* HeroCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A15DC6D12DA695D600966AC3 /* ApiModel */ = {
+			isa = PBXGroup;
+			children = (
+				A15DC6D22DA695EF00966AC3 /* HeroDTO.swift */,
+			);
+			path = ApiModel;
+			sourceTree = "<group>";
+		};
 		A18597CB2DA30318001DCB1B = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +219,7 @@
 		A18598DA2DA3069E001DCB1B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A15DC6D12DA695D600966AC3 /* ApiModel */,
 				A15DC5E92DA57F2B00966AC3 /* APIRequests */,
 				A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */,
 			);
@@ -167,7 +229,8 @@
 		A18598DB2DA306A4001DCB1B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */,
+				A15DC6C42DA67A4200966AC3 /* UseCases */,
+				A15DC6C52DA67A5200966AC3 /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -175,6 +238,7 @@
 		A18598DC2DA306A9001DCB1B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A15DC6BF2DA6740200966AC3 /* HeroList */,
 				A18599D02DA30CBF001DCB1B /* Splash */,
 				A18599D32DA3DD02001DCB1B /* Login */,
 				A18599DB2DA3E4D6001DCB1B /* Binding.swift */,
@@ -350,9 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18598DF2DA30719001DCB1B /* SplashView.xib in Resources */,
+				A15DC6CD2DA6800E00966AC3 /* HeroCell.xib in Resources */,
 				A18598F62DA30782001DCB1B /* Assets.xcassets in Resources */,
 				A18599D52DA3DD1C001DCB1B /* LoginView.xib in Resources */,
 				A18598F82DA30782001DCB1B /* LaunchScreen.storyboard in Resources */,
+				A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,22 +443,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15DC6C32DA6781100966AC3 /* HeroListViewController.swift in Sources */,
 				A15DC5C42DA5726E00966AC3 /* Endpoint.swift in Sources */,
 				A18599D72DA3E056001DCB1B /* LoginViewController.swift in Sources */,
 				A18598F42DA30782001DCB1B /* AppDelegate.swift in Sources */,
 				A18598F52DA30782001DCB1B /* SceneDelegate.swift in Sources */,
 				A15DC5C02DA5709A00966AC3 /* RequestBuilder.swift in Sources */,
+				A15DC6C72DA67A6100966AC3 /* Hero.swift in Sources */,
 				A15DC5BB2DA5696D00966AC3 /* LoginUseCase.swift in Sources */,
 				A18599DC2DA3E4D6001DCB1B /* Binding.swift in Sources */,
+				A15DC6D02DA68D7200966AC3 /* GetHeroesUseCase.swift in Sources */,
 				A18598FA2DA30858001DCB1B /* SplashViewController.swift in Sources */,
 				A15DC5C62DA5744600966AC3 /* NetworingError.swift in Sources */,
 				A18599D22DA30DBA001DCB1B /* SplashBuilder.swift in Sources */,
+				A15DC6CE2DA6800E00966AC3 /* HeroCell.swift in Sources */,
 				A15DC5F32DA58F6D00966AC3 /* ApiProvider.swift in Sources */,
 				A18599CB2DA309C6001DCB1B /* SplashViewModel.swift in Sources */,
 				A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */,
 				A15DC5F12DA584DA00966AC3 /* LoginApiRequest.swift in Sources */,
 				A18599D92DA3E150001DCB1B /* LoginViewModel.swift in Sources */,
 				A15DC5C22DA5711200966AC3 /* HTTPMethods.swift in Sources */,
+				A15DC6C92DA67B9000966AC3 /* HeroesListViewModel.swift in Sources */,
+				A15DC6D32DA695EF00966AC3 /* HeroDTO.swift in Sources */,
 				A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
