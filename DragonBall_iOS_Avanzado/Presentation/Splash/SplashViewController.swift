@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
     
     private let viewModel: SplashViewModel
     
@@ -25,11 +25,40 @@ class SplashViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        // dependiendo de si tenemos token de session navegamos a login o la pantallas de Heroes
+        // TODO: dependiendo de si tenemos token de session navegamos a login o la pantallas de Heroes
         super.viewWillAppear(animated)
+        bind()
+        viewModel.load()
+        
+    }
+    
+    // MARK: - Binding
+    
+    /// Nos vamos a "suscribir" a los cambios del ViewModel
+    private func bind(){
+        
+        viewModel.onStateChanged.bind { [weak self] state in
+            switch state {
+            case .loading:
+                // TODO: - No quieres hacer algo aqui ?
+                print("Cargando")
+            case .error:
+                // TODO: - No quieres hacer algo aqui ?
+                print("Ha ocurrido un error en el splash")
+            case .ready:
+                self?.navigationController?.setViewControllers([LoginBuilder().build()], animated: true)
+                
+                
+            }
+        }
+        
     }
     
 }
