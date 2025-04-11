@@ -47,9 +47,9 @@ final class LoginViewController : UIViewController {
             case .error(let reason):
                 self?.renderError(reason)
             case .success:
-                self?.renderLoading()
-            case .loading:
                 self?.renderSuccess()
+            case .loading:
+                self?.renderLoading()
             }
         
         }
@@ -61,9 +61,10 @@ final class LoginViewController : UIViewController {
     private func renderSuccess() {
         
         //Navegamos hacia el HeroList
-        //navigationController?.show(HeroesListBuilder().build(), sender: self)
         
-        navigationController?.setViewControllers([HeroesListBuilder().build()], animated: true)
+        
+        //navigationController?.setViewControllers([HeroesListBuilder().build()], animated: true)
+        present(HeroesListBuilder().build(), animated: true)
         
     }
     private func renderLoading() {

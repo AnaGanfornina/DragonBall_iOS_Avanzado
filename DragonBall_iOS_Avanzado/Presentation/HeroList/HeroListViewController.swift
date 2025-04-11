@@ -12,17 +12,19 @@ enum HeroesSeccions {
     case heroes
 }
 
-final class HeroListViewController: UICollectionViewController {
+final class HeroListViewController: UIViewController {
     
     private var viewModel: HeroesListViewModel
     
     // MARK: - Outlets
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak private var errorLabel: UILabel!
     
     // MARK: - DataSource
     
     typealias DataSource = UICollectionViewDiffableDataSource<HeroesSeccions, Hero>
+    typealias CellRegistration = UICollectionView.CellRegistration< HeroCell, Hero>
     typealias Snapshot = NSDiffableDataSourceSnapshot<HeroesSeccions, Hero>
     
     // MARK: - Data
@@ -35,12 +37,15 @@ final class HeroListViewController: UICollectionViewController {
     init(viewModel: HeroesListViewModel) {
         self.viewModel = viewModel
          
-        
+        /*
         // Configuramos la forma de la rejilla
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.scrollDirection = .vertical
         super.init(collectionViewLayout: layout)
+         */
+        super.init(nibName: "HeroListView", bundle: Bundle(for: type(of: self)))
+         
         
     }
     
@@ -62,6 +67,15 @@ final class HeroListViewController: UICollectionViewController {
         
     }
     
+    // MARK: - Actions
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        // Le decimos al ViewModel que limpie la base de datos
+        viewModel.performLogout()
+        //navigationController?.popViewController(animated: true) // Nos lleva al primer viewControler que haya en el stacNavigation
+        dismiss(animated: true)
+    }
+    
     // MARK: - Binding
     
     private func bind(){
@@ -80,22 +94,18 @@ final class HeroListViewController: UICollectionViewController {
     // MARK: - Configuración del CollectionView
     
     private func configureCollectionView(){
-        // Registrar la celda
-        let registration = UICollectionView.CellRegistration<HeroCell, Hero>(cellNib: UINib(nibName: "HeroCell", bundle: nil)) { cell, _, hero in
+        collectionView.delegate = self
+        // Usamos un CellRegistration para crear las celdas  una ventaja que tiene es que si usamos el objeto como
+        // identificador ya nos viene en el handler y no necesitamos acceder a él por su indexPath
+        let nib = UINib(nibName: HeroCell.identifier, bundle: nil)
+        let cellRegistration = CellRegistration(cellNib: nib) { cell, _, hero in
+            
             cell.configure(with: hero)
         }
-        
-        // Crear la fuente de datos que vamos a representar en la tabla
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, hero in
-            collectionView.dequeueConfiguredReusableCell(
-                using: registration,
-                for: indexPath,
-                item: hero)
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: hero)
+            
         })
-        
-        // Asignamos la fuente de datos al collectionView
-        
-        collectionView.dataSource = dataSource
     }
     
     // MARK: - State rendering
@@ -114,13 +124,13 @@ final class HeroListViewController: UICollectionViewController {
         var snapshot = Snapshot()
         snapshot.appendSections([.heroes])
         snapshot.appendItems(heroes)
-        dataSource?.apply(snapshot)
+        dataSource?.applySnapshotUsingReloadData(snapshot)
     }
    
 }
 // MARK: - CollectionViewLayout
 
-extension HeroListViewController: UICollectionViewDelegateFlowLayout {
+extension HeroListViewController:UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -132,3 +142,4 @@ extension HeroListViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 125)
     }
 }
+

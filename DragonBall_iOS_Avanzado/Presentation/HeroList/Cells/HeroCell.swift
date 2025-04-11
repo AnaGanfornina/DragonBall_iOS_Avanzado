@@ -8,6 +8,8 @@
 import UIKit
 
 class HeroCell: UICollectionViewCell {
+    
+    static let identifier = String(describing: HeroCell.self)
 
     // MARK: - Outlets
     @IBOutlet weak private var heroImage: UIImageView!
