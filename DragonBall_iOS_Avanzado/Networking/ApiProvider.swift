@@ -20,13 +20,12 @@ struct ApiProvider {
     
     // MARK: - Funcion para hacer login
     
-    func login(username: String, password: String, completion: @escaping (Result<Data,NetworingError>) -> Void) {
+    func login(username: String, password: String, completion: @escaping (Result<String,NetworingError>) -> Void) {
         
         do {
-            let request = try requestBuilder.build(endpoint: .login, username: username, password: password)
-            
+            let request = try requestBuilder.build(endpoint: .login(username: username, password: password))
+            // Aquí estamos enviando el token
             session.dataTask(with: request) { data, response, error in
-                
                 if let error {
                     return completion(.failure(.serverError(error: error)))
                 }
@@ -44,15 +43,19 @@ struct ApiProvider {
                     return
                 }
                 
-                // Aquí estamos enviando el token
-                
-                completion(.success(data))
+                guard let token = String(data: data, encoding: .utf8) else {
+                    completion(.failure(.decodingFailed))
+                    return
+                }
+                completion(.success(token))
             }.resume()
+            
         } catch {
-            completion(.failure(.invalidURL)) // TODO:  Este catch coge todos los fallos,no me gusta
+            completion(.failure(error))
         }
     }
-       
+
+
         // MARK: - Funcion para devolver los heroes
         
         func getHeroes(name: String = "", completion: @escaping (Result<[HeroDTO], NetworingError>) -> Void) {
@@ -93,19 +96,17 @@ struct ApiProvider {
                     return
                 }
                 
+                
                 do {
+                    
                     let response = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(response))
                 } catch {
-                    completion(.failure(.errorParsingData))
+                        completion(.failure(.errorParsingData))
                 }
-                // TODO: Mira como puedes no repetir código aqui
-        
-                
             }.resume()
-        }
-        
-        
+        }     
     }
+
     
 

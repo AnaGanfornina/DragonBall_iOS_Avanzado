@@ -8,7 +8,7 @@
 import Foundation
 
 enum Endpoint {
-    case login
+    case login(username: String, password: String)
     case heroes(name: String)
     case locations(id: String)
     
@@ -19,19 +19,12 @@ enum Endpoint {
         switch self {
         case .heroes, .locations:
             return true
-        default:
+        case .login:
             return false
         }
     }
     
-    var isAuthorizationBasicRequired: Bool {
-        switch self {
-        case .heroes, .locations:
-            return false
-        default:
-            return true
-        }
-    }
+  
     
     
     func path() -> String {
@@ -47,9 +40,7 @@ enum Endpoint {
     
     func httpMethod() -> String {
         switch self {
-        case .login:
-            return HTTPMethods.POST.rawValue
-        case .heroes, .locations:
+        case .login, .heroes, .locations:
             return HTTPMethods.POST.rawValue
         }
     }
@@ -58,15 +49,19 @@ enum Endpoint {
     func params() -> Data? {
         switch self {
             
-        case .login:
-            return nil
+        case .login(username: let username, password: let password):
+            let atributes = ["username": username, "password": password]
+            // Creamos data a partir de un diccionario
+            let data = try? JSONSerialization.data(withJSONObject: atributes)
+            return data
+            
         case .heroes(name: let name):
-            let attributes = ["name": name]
-            let data = try? JSONSerialization.data(withJSONObject: attributes) // Esto es para poder codifigar un diccionario y poder pasarselo como data al la api
+            let atributes = ["name": name]
+            let data = try? JSONSerialization.data(withJSONObject: atributes) // Esto es para poder codifigar un diccionario y poder pasarselo como data al la api
             return data
         case .locations(id: let id):
-            let attributes = ["id": id ]
-            let data = try? JSONSerialization.data(withJSONObject: attributes)
+            let atributes = ["id": id ]
+            let data = try? JSONSerialization.data(withJSONObject: atributes)
             return data
         }
     }

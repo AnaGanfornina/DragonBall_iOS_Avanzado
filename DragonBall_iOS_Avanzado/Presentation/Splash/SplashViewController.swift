@@ -53,6 +53,7 @@ final class SplashViewController: UIViewController {
                 // TODO: - No quieres hacer algo aqui ?
                 print("Ha ocurrido un error en el splash")
             case .ready:
+                //self?.navigationController?.show(LoginBuilder().build(), sender: self)
                 self?.navigationController?.setViewControllers([LoginBuilder().build()], animated: true)
                 
                 

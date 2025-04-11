@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroListViewController" customModule="DragonBall_iOS_Avanzado" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="k0H-mb-7Bg" id="7Gn-4D-uI3"/>
+                <outlet property="errorLabel" destination="Kbh-Eo-1RS" id="gGX-N1-Dcd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="QCS-Le-WUS"/>
             </connections>
         </placeholder>
@@ -38,6 +39,12 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="power" catalog="system"/>
                 </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-Eo-1RS">
+                    <rect key="frame" x="177.66666666666666" y="415.66666666666669" width="37.666666666666657" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,6 +54,8 @@
                 <constraint firstItem="k0H-mb-7Bg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Xg-XD-fwx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k0H-mb-7Bg" secondAttribute="bottom" id="CkZ-c4-tcd"/>
                 <constraint firstItem="k0H-mb-7Bg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="H4n-RX-2Gs"/>
+                <constraint firstItem="Kbh-Eo-1RS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O3j-GA-TPb"/>
+                <constraint firstItem="Kbh-Eo-1RS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="evs-Jt-oEo"/>
                 <constraint firstItem="k0H-mb-7Bg" firstAttribute="top" secondItem="9cm-h3-pOJ" secondAttribute="bottom" constant="16" id="zed-r0-bkb"/>
             </constraints>
             <point key="canvasLocation" x="135" y="20"/>
@@ -56,6 +65,9 @@
         <image name="power" catalog="system" width="127" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,16 +8,13 @@
 import Foundation
 
 struct RequestBuilder {
-    /*
-    var username: String
-    var password: String
     
-    init(username: String = "prueba", password: String = "") {
-        self.username = username
-        self.password = password
+    private var secureData: SecureDataProtocol
+    
+    init(secureData: SecureDataProtocol = SecureDataProvider()) {
+        self.secureData = secureData
     }
-    
-    */
+  
     /// Construye la url con el endpoint dado
     func buildURL(endpoint: Endpoint) -> URL? {
         var components = URLComponents()
@@ -28,7 +25,7 @@ struct RequestBuilder {
     }
    
     
-    func build(endpoint: Endpoint , username: String = "prueba", password: String = "", secureData: SecureDataProtocol = SecureDataProvider()) throws(NetworingError) -> URLRequest {
+    func build(endpoint: Endpoint) throws(NetworingError) -> URLRequest {
         
         guard let url = buildURL(endpoint: endpoint) else {
             throw .invalidURL
@@ -37,31 +34,28 @@ struct RequestBuilder {
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.httpMethod()
         
-        // Solo añadimos la cabecera del token a los servicios que les haga falta
-        if endpoint.isAuthoritationRequired {
-            guard let token = secureData.getToken() else {
-                throw .sessionTokenMissed
-            }
-            
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
+        // Comprobamos si es un endpoint de login
         
-        if endpoint.isAuthorizationBasicRequired{
-            print(username)
-            
-            let loginString = String(format: "%@:%@", username, password)
+        if case.login(let email, let password) = endpoint {
+            let loginString = String(format: "%@:%@", email, password)
             
             guard let loginData = loginString.data(using: .utf8) else {
-                throw.decodingFailed
+                throw .errorParsingData
             }
             let base64LoginData = loginData.base64EncodedString()
             request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-            
         } else {
-            request.setValue("application/json, charset=utf-8", forHTTPHeaderField: "Content-Type")
+            // Solo añadimos la cabecera del token a los servicios que les haga falta
+            // TODO: Ver si podemos quitar el if dentro del else, me parece redundante
+            if endpoint.isAuthoritationRequired {
+                guard let token = secureData.getToken() else {
+                    throw .sessionTokenMissed
+                }
+                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                
+            }
         }
-        
-        
+        request.setValue("application/json, charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = endpoint.params()
         
         return request

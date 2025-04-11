@@ -30,7 +30,7 @@ final class LoginViewController : UIViewController {
     
     /// Para emitir enventos al ViewModel, cuando pulse el botón la vista invoca el proceso de login del ViewModel
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        viewModel.login(username: nameField.text, password: passwordField.text)
+        viewModel.login(username: "a@gmail.com", password: "abcdef")
     }
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -61,7 +61,9 @@ final class LoginViewController : UIViewController {
     private func renderSuccess() {
         
         //Navegamos hacia el HeroList
-        print("Hemos hecho login y estamos en el HeroList")
+        //navigationController?.show(HeroesListBuilder().build(), sender: self)
+        
+        navigationController?.setViewControllers([HeroesListBuilder().build()], animated: true)
         
     }
     private func renderLoading() {
