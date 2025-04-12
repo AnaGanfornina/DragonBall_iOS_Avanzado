@@ -16,6 +16,7 @@ final class HeroDetailViewModel {
     let onStateChanged = Binding<HeroDetailState>()
     private let useCase: HeroDetailUseCaseProtocol
     private var locations: [HeroLocation] = []
+    private(set) var transformation: [HeroTransformation]?
     private(set) var hero: Hero?
     
     init(useCase: HeroDetailUseCaseProtocol, hero: Hero?){
@@ -24,7 +25,7 @@ final class HeroDetailViewModel {
         
     }
     
-    func loadData(){
+    func loadDataHero(){
         onStateChanged.update(.loading)
         
         guard let hero = hero else {
@@ -43,8 +44,26 @@ final class HeroDetailViewModel {
             }
         }
     }
-    
-    // TODO: Falta un getHeroLocations
-    
-    
+    func loadDataTransformation(){
+        onStateChanged.update(.loading)
+        guard let hero = hero else {
+            onStateChanged.update(.error(reason: "No se encontró el héroe"))
+            return
+        }
+        
+        useCase.fetchTransformationForHeroWhith(id: hero.id) {[weak self] result in
+            switch result {
+            case .success(let transformations):
+                self?.transformation = transformations
+                self?.onStateChanged.update(.succcess)
+            case .failure(let error):
+                self?.onStateChanged.update(.error(reason: String(describing: error)))
+                
+                
+            }
+        }
+        
+        // TODO: Falta un getHeroLocations
+        
+    }
 }

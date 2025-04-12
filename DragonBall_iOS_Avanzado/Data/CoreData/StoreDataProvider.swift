@@ -74,6 +74,15 @@ extension StoreDataProvider {
         return (try? context.fetch(request)) ?? []
     }
     
+    func fetchTransformation(filter: NSPredicate?, sortAscending: Bool = true) -> [MOTransformation] {
+        let request = MOTransformation.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(keyPath: \MOTransformation.name, ascending: sortAscending)
+        
+        request.sortDescriptors = [sortDescriptor]
+        request.predicate = filter
+        return (try? context.fetch(request)) ?? []
+    }
+    
     // Función para saber el númeo de objetos de la bbdd sin que nos importe que son exactamente
     func numHeroes() -> Int {
         return (try? context.count(for: MOHero.fetchRequest())) ?? -1 // Ponemos -1 para combrobar que no está en su valor por defecto que es 0(no hay nada en la BBDD)
@@ -108,6 +117,24 @@ extension StoreDataProvider {
                 let predicate = NSPredicate(format: "identifier == %@", identifier)
                 newLocation.hero = fetchHeroes(filter: predicate).first
             }
+        }
+        saveContext()
+    }
+    
+    func isnert(transformations: [TransformationDTO]){
+        for transformation in transformations {
+            let newTransformation = MOTransformation(context: context)
+            newTransformation.identifier = transformation.id
+            newTransformation.name = transformation.name
+            newTransformation.info = transformation.description
+            newTransformation.photo = transformation.photo
+            
+            //Asocia un heroe a una transformacion
+            if let identifier = transformation.hero?.id {
+                let predicate = NSPredicate(format: "identifier == %@", identifier)
+                newTransformation.hero = fetchHeroes(filter: predicate).first
+            }
+            
         }
         saveContext()
     }

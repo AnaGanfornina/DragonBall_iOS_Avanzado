@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="heroDescriptionTextView" destination="FMa-Kz-kq9" id="SbS-Cv-Wla"/>
                 <outlet property="heroLocation" destination="fMf-cQ-OhQ" id="CRs-fE-CTj"/>
+                <outlet property="heroTransformationCollectionView" destination="hll-pW-x6e" id="pl4-sD-JbF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3Q0-hs-SHY"/>
             </connections>
         </placeholder>
@@ -28,25 +29,43 @@
                     </constraints>
                     <standardMapConfiguration key="preferredConfiguration"/>
                 </mapView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-Kz-kq9">
-                    <rect key="frame" x="16" y="307" width="361" height="362"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <color key="textColor" systemColor="labelColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-Jw-eb2">
+                    <rect key="frame" x="16" y="305" width="361" height="489"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-Kz-kq9">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="364"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hll-pW-x6e">
+                            <rect key="frame" x="0.0" y="389" width="361" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="jKn-1j-sFI"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ROs-VR-P5J">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="FMa-Kz-kq9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="1k3-U2-Zee"/>
+                <constraint firstItem="U8g-Jw-eb2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Uj-CQ-5HT"/>
                 <constraint firstItem="fMf-cQ-OhQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Asa-1B-uMr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U8g-Jw-eb2" secondAttribute="bottom" constant="24" id="BJN-k1-7mG"/>
                 <constraint firstItem="fMf-cQ-OhQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Blw-rg-im5"/>
-                <constraint firstItem="FMa-Kz-kq9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ESl-Jb-WAE"/>
+                <constraint firstItem="U8g-Jw-eb2" firstAttribute="top" secondItem="fMf-cQ-OhQ" secondAttribute="bottom" constant="6" id="F6n-I1-Iet"/>
+                <constraint firstItem="U8g-Jw-eb2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="GdN-K9-ayn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fMf-cQ-OhQ" secondAttribute="trailing" id="Uyg-yi-yBQ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FMa-Kz-kq9" secondAttribute="bottom" constant="149" id="WVi-fm-ztj"/>
-                <constraint firstItem="FMa-Kz-kq9" firstAttribute="top" secondItem="fMf-cQ-OhQ" secondAttribute="bottom" constant="8" id="k81-fV-GDq"/>
             </constraints>
             <point key="canvasLocation" x="-92.36641221374046" y="19.718309859154932"/>
         </view>

@@ -14,19 +14,24 @@ public class MOHero: NSManagedObject {
 
 }
 
+
+
+
 extension MOHero {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MOHero> {
         return NSFetchRequest<MOHero>(entityName: "Hero")
     }
 
-    @NSManaged public var photo: String?
     @NSManaged public var favorite: Bool
+    @NSManaged public var identifier: String?
     @NSManaged public var info: String?
     @NSManaged public var name: String?
-    @NSManaged public var identifier: String?
+    @NSManaged public var photo: String?
     // La relacion con el hero lo hace como otro atributo mas
-    @NSManaged public var locations: Set<MOHeroLocation>? // Usamos set en vez de un array para que no haya duplicados
+    @NSManaged public var locations:  Set<MOHeroLocation>?// Usamos set en vez de un array para que no haya duplicados
+    @NSManaged public var transformation: Set<MOTransformation>?
+
 }
 
 // MARK: Generated accessors for locations
@@ -46,9 +51,27 @@ extension MOHero {
 
 }
 
+// MARK: Generated accessors for transformation
+extension MOHero {
+
+    @objc(addTransformationObject:)
+    @NSManaged public func addToTransformation(_ value: MOTransformation)
+
+    @objc(removeTransformationObject:)
+    @NSManaged public func removeFromTransformation(_ value: MOTransformation)
+
+    @objc(addTransformation:)
+    @NSManaged public func addToTransformation(_ values: NSSet)
+
+    @objc(removeTransformation:)
+    @NSManaged public func removeFromTransformation(_ values: NSSet)
+
+}
+
 extension MOHero : Identifiable {
 
 }
+
 
 extension MOHero {
     // Mapper para crear un objeto Hero de Domain a partir de MOHero

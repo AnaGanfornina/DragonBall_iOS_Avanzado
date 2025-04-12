@@ -10,6 +10,7 @@ import Foundation
 enum Endpoint {
     case login(username: String, password: String)
     case heroes(name: String)
+    case transformation(id: String)
     case locations(id: String)
     
     
@@ -17,7 +18,7 @@ enum Endpoint {
     
     var isAuthoritationRequired: Bool {
         switch self {
-        case .heroes, .locations:
+        case .heroes, .locations, .transformation:
             return true
         case .login:
             return false
@@ -35,12 +36,14 @@ enum Endpoint {
             return "/api/heros/all"
         case .locations:
             return "/api/heros/locations"
+        case .transformation:
+            return "/api/heros/tranformations"
         }
     }
     
     func httpMethod() -> String {
         switch self {
-        case .login, .heroes, .locations:
+        case .login, .heroes, .locations, .transformation:
             return HTTPMethods.POST.rawValue
         }
     }
@@ -60,6 +63,10 @@ enum Endpoint {
             let data = try? JSONSerialization.data(withJSONObject: atributes) // Esto es para poder codifigar un diccionario y poder pasarselo como data al la api
             return data
         case .locations(id: let id):
+            let atributes = ["id": id ]
+            let data = try? JSONSerialization.data(withJSONObject: atributes)
+            return data
+        case .transformation(id: let id):
             let atributes = ["id": id ]
             let data = try? JSONSerialization.data(withJSONObject: atributes)
             return data

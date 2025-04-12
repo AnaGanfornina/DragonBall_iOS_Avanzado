@@ -15,6 +15,11 @@
 		A12D03C22DA999720037BF23 /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C12DA999720037BF23 /* HeroLocation.swift */; };
 		A12D03C42DA99B230037BF23 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */; };
 		A12D04202DA9C16B0037BF23 /* HeroDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */; };
+		A12D04222DAA60980037BF23 /* HeroTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04212DAA60930037BF23 /* HeroTransformation.swift */; };
+		A12D04692DAA61810037BF23 /* TransformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04672DAA61810037BF23 /* TransformationCell.swift */; };
+		A12D046A2DAA61810037BF23 /* TransformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D04682DAA61810037BF23 /* TransformationCell.xib */; };
+		A12D04C62DAA738D0037BF23 /* TransformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04C52DAA73870037BF23 /* TransformationDTO.swift */; };
+		A12D04DE2DAA77080037BF23 /* MOTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04D62DAA77080037BF23 /* MOTransformation.swift */; };
 		A15DC4BE2DA5057B00966AC3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A15DC4BD2DA5057B00966AC3 /* KeychainSwift */; };
 		A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */; };
 		A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */; };
@@ -23,7 +28,6 @@
 		A15DC5C22DA5711200966AC3 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5C12DA5710E00966AC3 /* HTTPMethods.swift */; };
 		A15DC5C42DA5726E00966AC3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5C32DA5726700966AC3 /* Endpoint.swift */; };
 		A15DC5C62DA5744600966AC3 /* NetworingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5C52DA5743B00966AC3 /* NetworingError.swift */; };
-		A15DC5F12DA584DA00966AC3 /* LoginApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5F02DA584C600966AC3 /* LoginApiRequest.swift */; };
 		A15DC5F32DA58F6D00966AC3 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5F22DA58F6800966AC3 /* ApiProvider.swift */; };
 		A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15DC6C02DA6746900966AC3 /* HeroListView.xib */; };
 		A15DC6C32DA6781100966AC3 /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC6C22DA6781100966AC3 /* HeroListViewController.swift */; };
@@ -78,6 +82,11 @@
 		A12D03C12DA999720037BF23 /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
 		A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailBuilder.swift; sourceTree = "<group>"; };
+		A12D04212DAA60930037BF23 /* HeroTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformation.swift; sourceTree = "<group>"; };
+		A12D04672DAA61810037BF23 /* TransformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationCell.swift; sourceTree = "<group>"; };
+		A12D04682DAA61810037BF23 /* TransformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationCell.xib; sourceTree = "<group>"; };
+		A12D04C52DAA73870037BF23 /* TransformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDTO.swift; sourceTree = "<group>"; };
+		A12D04D62DAA77080037BF23 /* MOTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTransformation.swift; sourceTree = "<group>"; };
 		A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
 		A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -85,7 +94,6 @@
 		A15DC5C12DA5710E00966AC3 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		A15DC5C32DA5726700966AC3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A15DC5C52DA5743B00966AC3 /* NetworingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworingError.swift; sourceTree = "<group>"; };
-		A15DC5F02DA584C600966AC3 /* LoginApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiRequest.swift; sourceTree = "<group>"; };
 		A15DC5F22DA58F6800966AC3 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		A15DC6C02DA6746900966AC3 /* HeroListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListView.xib; sourceTree = "<group>"; };
 		A15DC6C22DA6781100966AC3 /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +184,7 @@
 		A12D03B42DA992060037BF23 /* DetailHero */ = {
 			isa = PBXGroup;
 			children = (
+				A12D04662DAA61400037BF23 /* Cells */,
 				A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */,
 				A12D03B52DA992210037BF23 /* HeroDetailView.xib */,
 				A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */,
@@ -184,12 +193,13 @@
 			path = DetailHero;
 			sourceTree = "<group>";
 		};
-		A15DC5E92DA57F2B00966AC3 /* APIRequests */ = {
+		A12D04662DAA61400037BF23 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A15DC5F02DA584C600966AC3 /* LoginApiRequest.swift */,
+				A12D04672DAA61810037BF23 /* TransformationCell.swift */,
+				A12D04682DAA61810037BF23 /* TransformationCell.xib */,
 			);
-			path = APIRequests;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A15DC6BF2DA6740200966AC3 /* HeroList */ = {
@@ -217,6 +227,7 @@
 		A15DC6C52DA67A5200966AC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A12D04212DAA60930037BF23 /* HeroTransformation.swift */,
 				A15DC6C62DA67A5F00966AC3 /* Hero.swift */,
 				A12D03C12DA999720037BF23 /* HeroLocation.swift */,
 			);
@@ -235,6 +246,7 @@
 		A15DC6D12DA695D600966AC3 /* ApiModel */ = {
 			isa = PBXGroup;
 			children = (
+				A12D04C52DAA73870037BF23 /* TransformationDTO.swift */,
 				A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */,
 				A15DC6D22DA695EF00966AC3 /* HeroDTO.swift */,
 			);
@@ -247,6 +259,7 @@
 				A15DC6D52DA6CFFF00966AC3 /* Model.xcdatamodeld */,
 				A15DC6F32DA6E0B100966AC3 /* MOHero.swift */,
 				A15DC6F52DA6E0B100966AC3 /* MOHeroLocation.swift */,
+				A12D04D62DAA77080037BF23 /* MOTransformation.swift */,
 				A15DC6D82DA6D58600966AC3 /* StoreDataProvider.swift */,
 			);
 			path = CoreData;
@@ -290,7 +303,6 @@
 			children = (
 				A15DC6D42DA6CF2700966AC3 /* CoreData */,
 				A15DC6D12DA695D600966AC3 /* ApiModel */,
-				A15DC5E92DA57F2B00966AC3 /* APIRequests */,
 				A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */,
 			);
 			path = Data;
@@ -490,6 +502,7 @@
 				A18599D52DA3DD1C001DCB1B /* LoginView.xib in Resources */,
 				A18598F82DA30782001DCB1B /* LaunchScreen.storyboard in Resources */,
 				A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */,
+				A12D046A2DAA61810037BF23 /* TransformationCell.xib in Resources */,
 				A12D03B62DA992210037BF23 /* HeroDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,15 +549,18 @@
 				A15DC5F32DA58F6D00966AC3 /* ApiProvider.swift in Sources */,
 				A18599CB2DA309C6001DCB1B /* SplashViewModel.swift in Sources */,
 				A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */,
+				A12D04DE2DAA77080037BF23 /* MOTransformation.swift in Sources */,
 				A12D03B82DA994640037BF23 /* HeroDetailViewController.swift in Sources */,
-				A15DC5F12DA584DA00966AC3 /* LoginApiRequest.swift in Sources */,
 				A18599D92DA3E150001DCB1B /* LoginViewModel.swift in Sources */,
 				A15DC6D92DA6D58600966AC3 /* StoreDataProvider.swift in Sources */,
 				A15DC5C22DA5711200966AC3 /* HTTPMethods.swift in Sources */,
 				A15DC6C92DA67B9000966AC3 /* HeroesListViewModel.swift in Sources */,
 				A15DC6D32DA695EF00966AC3 /* HeroDTO.swift in Sources */,
+				A12D04222DAA60980037BF23 /* HeroTransformation.swift in Sources */,
 				A12D03C02DA998F50037BF23 /* HeroDetailUseCase.swift in Sources */,
 				A12D03BE2DA995BF0037BF23 /* HeroDetailViewModel.swift in Sources */,
+				A12D04692DAA61810037BF23 /* TransformationCell.swift in Sources */,
+				A12D04C62DAA738D0037BF23 /* TransformationDTO.swift in Sources */,
 				A12D03C42DA99B230037BF23 /* LocationDTO.swift in Sources */,
 				A12D04202DA9C16B0037BF23 /* HeroDetailBuilder.swift in Sources */,
 				A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */,

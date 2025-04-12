@@ -68,6 +68,18 @@ struct ApiProvider {
                 completion(.failure(error))
             }
         }
+    
+        // MARK: - Funcion para devolver transformaciones
+    func getTransformation(id: String , completion: @escaping (Result< [TransformationDTO], NetworingError>) -> Void) {
+        do {
+            let request = try requestBuilder.build(endpoint: .transformation(id: id))
+            manageResponse(request: request, completion: completion)
+            
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
         
         
         // MARK: - Funcion para devolver las localizaciones
