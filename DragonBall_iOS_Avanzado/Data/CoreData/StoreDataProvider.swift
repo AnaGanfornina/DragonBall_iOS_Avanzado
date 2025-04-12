@@ -121,7 +121,7 @@ extension StoreDataProvider {
         saveContext()
     }
     
-    func isnert(transformations: [TransformationDTO]){
+    func insert(transformations: [TransformationDTO]){
         for transformation in transformations {
             let newTransformation = MOTransformation(context: context)
             newTransformation.identifier = transformation.id

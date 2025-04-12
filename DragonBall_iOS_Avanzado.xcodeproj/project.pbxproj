@@ -25,6 +25,13 @@
 		A12D05332DAABB3C0037BF23 /* TransformationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05322DAABB2B0037BF23 /* TransformationDetailViewModel.swift */; };
 		A12D05352DAAC2B50037BF23 /* GetHeroTransformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05342DAAC2AC0037BF23 /* GetHeroTransformationUseCase.swift */; };
 		A12D05372DAACAF70037BF23 /* TransformationDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05362DAACAEB0037BF23 /* TransformationDetailBuilder.swift */; };
+		A12D053A2DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05382DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift */; };
+		A12D05422DAAE2330037BF23 /* StoreProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05412DAAE2330037BF23 /* StoreProviderTest.swift */; };
+		A12D05492DAAF1E20037BF23 /* ApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05482DAAF1E20037BF23 /* ApiProviderTest.swift */; };
+		A12D054C2DAAF2B30037BF23 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D054B2DAAF2B30037BF23 /* MockURLProtocol.swift */; };
+		A12D05532DAB0C240037BF23 /* Heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = A12D05522DAB0C240037BF23 /* Heroes.json */; };
+		A12D05552DAB0E9B0037BF23 /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = A12D05542DAB0E8D0037BF23 /* Transformations.json */; };
+		A12D05592DAB225F0037BF23 /* MockSecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05582DAB225F0037BF23 /* MockSecureDataProvider.swift */; };
 		A15DC4BE2DA5057B00966AC3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A15DC4BD2DA5057B00966AC3 /* KeychainSwift */; };
 		A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */; };
 		A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */; };
@@ -97,6 +104,13 @@
 		A12D05322DAABB2B0037BF23 /* TransformationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailViewModel.swift; sourceTree = "<group>"; };
 		A12D05342DAAC2AC0037BF23 /* GetHeroTransformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroTransformationUseCase.swift; sourceTree = "<group>"; };
 		A12D05362DAACAEB0037BF23 /* TransformationDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailBuilder.swift; sourceTree = "<group>"; };
+		A12D05382DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBall_iOS_AvanzadoTests.swift; sourceTree = "<group>"; };
+		A12D05412DAAE2330037BF23 /* StoreProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProviderTest.swift; sourceTree = "<group>"; };
+		A12D05482DAAF1E20037BF23 /* ApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTest.swift; sourceTree = "<group>"; };
+		A12D054B2DAAF2B30037BF23 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		A12D05522DAB0C240037BF23 /* Heroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Heroes.json; sourceTree = "<group>"; };
+		A12D05542DAB0E8D0037BF23 /* Transformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Transformations.json; sourceTree = "<group>"; };
+		A12D05582DAB225F0037BF23 /* MockSecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSecureDataProvider.swift; sourceTree = "<group>"; };
 		A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
 		A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -137,11 +151,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A18597ED2DA3031A001DCB1B /* DragonBall_iOS_AvanzadoTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DragonBall_iOS_AvanzadoTests;
-			sourceTree = "<group>";
-		};
 		A18597F72DA3031A001DCB1B /* DragonBall_iOS_AvanzadoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DragonBall_iOS_AvanzadoUITests;
@@ -223,6 +232,60 @@
 			path = TransformationDetail;
 			sourceTree = "<group>";
 		};
+		A12D05392DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A12D05472DAAF1940037BF23 /* Networking */,
+				A12D053B2DAAE1820037BF23 /* Data */,
+				A12D05382DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift */,
+			);
+			path = DragonBall_iOS_AvanzadoTests;
+			sourceTree = "<group>";
+		};
+		A12D053B2DAAE1820037BF23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A12D053C2DAAE18F0037BF23 /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A12D053C2DAAE18F0037BF23 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A12D05412DAAE2330037BF23 /* StoreProviderTest.swift */,
+				A12D05582DAB225F0037BF23 /* MockSecureDataProvider.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A12D05472DAAF1940037BF23 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A12D054D2DAAF7FB0037BF23 /* Stubs */,
+				A12D054A2DAAF2A00037BF23 /* Mock */,
+				A12D05482DAAF1E20037BF23 /* ApiProviderTest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A12D054A2DAAF2A00037BF23 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A12D054B2DAAF2B30037BF23 /* MockURLProtocol.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		A12D054D2DAAF7FB0037BF23 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A12D05542DAB0E8D0037BF23 /* Transformations.json */,
+				A12D05522DAB0C240037BF23 /* Heroes.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		A15DC6BF2DA6740200966AC3 /* HeroList */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				A185984C2DA303E2001DCB1B /* DragonBall_iOS_Avanzado */,
-				A18597ED2DA3031A001DCB1B /* DragonBall_iOS_AvanzadoTests */,
+				A12D05392DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests */,
 				A18597F72DA3031A001DCB1B /* DragonBall_iOS_AvanzadoUITests */,
 				A18597D52DA30318001DCB1B /* Products */,
 			);
@@ -434,9 +497,6 @@
 			dependencies = (
 				A18597EC2DA3031A001DCB1B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				A18597ED2DA3031A001DCB1B /* DragonBall_iOS_AvanzadoTests */,
-			);
 			name = DragonBall_iOS_AvanzadoTests;
 			packageProductDependencies = (
 			);
@@ -535,6 +595,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12D05552DAB0E9B0037BF23 /* Transformations.json in Resources */,
+				A12D05532DAB0C240037BF23 /* Heroes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +663,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12D05422DAAE2330037BF23 /* StoreProviderTest.swift in Sources */,
+				A12D053A2DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift in Sources */,
+				A12D05592DAB225F0037BF23 /* MockSecureDataProvider.swift in Sources */,
+				A12D05492DAAF1E20037BF23 /* ApiProviderTest.swift in Sources */,
+				A12D054C2DAAF2B30037BF23 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

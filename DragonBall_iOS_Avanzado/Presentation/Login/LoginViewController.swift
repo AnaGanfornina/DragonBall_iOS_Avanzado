@@ -30,7 +30,7 @@ final class LoginViewController : UIViewController {
     
     /// Para emitir enventos al ViewModel, cuando pulse el botón la vista invoca el proceso de login del ViewModel
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        viewModel.login(username: "a@gmail.com", password: "abcdef")
+        viewModel.login(username: "", password: "")
     }
     // MARK: - Lifecycle
     override func viewDidLoad() {

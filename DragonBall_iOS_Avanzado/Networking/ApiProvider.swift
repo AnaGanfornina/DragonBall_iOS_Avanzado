@@ -55,22 +55,22 @@ struct ApiProvider {
         }
     }
 
-
-        // MARK: - Funcion para devolver los heroes
-        
-        func getHeroes(name: String = "", completion: @escaping (Result<[HeroDTO], NetworingError>) -> Void) {
-            
-            do {
-                let request = try requestBuilder.build(endpoint: .heroes(name: name))
-                manageResponse(request: request, completion: completion)
-                
-            } catch {
-                completion(.failure(error))
-            }
-        }
     
-        // MARK: - Funcion para devolver transformaciones
-    func getTransformation(id: String , completion: @escaping (Result< [TransformationDTO], NetworingError>) -> Void) {
+    // MARK: - Funcion para devolver los heroes
+    
+    func getHeroes(name: String = "", completion: @escaping (Result<[HeroDTO], NetworingError>) -> Void) {
+        
+        do {
+            let request = try requestBuilder.build(endpoint: .heroes(name: name))
+            manageResponse(request: request, completion: completion)
+            
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    // MARK: - Funcion para devolver transformaciones
+    func getTransformation(id: String = "" , completion: @escaping (Result< [TransformationDTO], NetworingError>) -> Void) {
         do {
             let request = try requestBuilder.build(endpoint: .transformation(id: id))
             manageResponse(request: request, completion: completion)
@@ -80,7 +80,7 @@ struct ApiProvider {
         }
     }
     
-        
+    
         
         // MARK: - Funcion para devolver las localizaciones
         
@@ -96,7 +96,7 @@ struct ApiProvider {
         // MARK: - Función para manegar las respuesstas de la api
         
         /// Función que nos permite gestionar la respuesta de los servicios
-        func manageResponse<T: Codable>(request: URLRequest, completion: @escaping (Result<T,NetworingError>) -> Void){
+    private func manageResponse<T: Codable>(request: URLRequest, completion: @escaping (Result<T,NetworingError>) -> Void){
             session.dataTask(with: request) { data, response, error in
                 
                 if let error {

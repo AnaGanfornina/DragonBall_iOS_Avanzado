@@ -31,7 +31,7 @@ final class GetHeroTransformationUseCase: GetHeroTransformationProtocol {
                 switch result {
                 case .success(let transformations):
                     self?.storeData.context.perform {
-                        self?.storeData.isnert(transformations: transformations)
+                        self?.storeData.insert(transformations: transformations)
                         let bdTransformation = self?.storedTransformationForHeroWith(id: id) ?? []
                         completion(.success(bdTransformation))
                     }
