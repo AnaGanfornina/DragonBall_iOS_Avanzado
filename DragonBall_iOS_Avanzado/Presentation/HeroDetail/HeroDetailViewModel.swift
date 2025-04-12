@@ -14,14 +14,16 @@ enum HeroDetailState: Equatable {
 
 final class HeroDetailViewModel {
     let onStateChanged = Binding<HeroDetailState>()
-    private let useCase: HeroDetailUseCaseProtocol
+    private let useCaseLocation: GetHeroLocationsProtocol
+    private let useCaseTransformation: GetHeroTransformationProtocol // TODO: Refactorizar para que sea un array y no dos variables separadas
     private var locations: [HeroLocation] = []
     private(set) var transformation: [HeroTransformation]?
     private(set) var hero: Hero?
     
-    init(useCase: HeroDetailUseCaseProtocol, hero: Hero?){
+    init(hero: Hero?, useCaseLocation: GetHeroLocationsProtocol, useCaseTransformation: GetHeroTransformationProtocol){
         self.hero = hero
-        self.useCase = useCase
+        self.useCaseLocation = useCaseLocation
+        self.useCaseTransformation = useCaseTransformation
         
     }
     
@@ -33,7 +35,7 @@ final class HeroDetailViewModel {
             return
         }
         
-        useCase.fetchLocationForHeroWhith(id: hero.id) { [weak self] result in
+        useCaseLocation.fetchLocationForHeroWhith(id: hero.id) { [weak self] result in
             switch result {
             case .success(let locations):
                 self?.locations = locations
@@ -51,15 +53,13 @@ final class HeroDetailViewModel {
             return
         }
         
-        useCase.fetchTransformationForHeroWhith(id: hero.id) {[weak self] result in
+        useCaseTransformation.fetchTransformationForHeroWhith(id: hero.id) {[weak self] result in
             switch result {
             case .success(let transformations):
                 self?.transformation = transformations
                 self?.onStateChanged.update(.succcess)
             case .failure(let error):
                 self?.onStateChanged.update(.error(reason: String(describing: error)))
-                
-                
             }
         }
         

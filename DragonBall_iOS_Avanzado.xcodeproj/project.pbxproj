@@ -11,7 +11,7 @@
 		A12D03B62DA992210037BF23 /* HeroDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D03B52DA992210037BF23 /* HeroDetailView.xib */; };
 		A12D03B82DA994640037BF23 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */; };
 		A12D03BE2DA995BF0037BF23 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */; };
-		A12D03C02DA998F50037BF23 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */; };
+		A12D03C02DA998F50037BF23 /* GetHeroLocationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03BF2DA998E80037BF23 /* GetHeroLocationsUseCase.swift */; };
 		A12D03C22DA999720037BF23 /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C12DA999720037BF23 /* HeroLocation.swift */; };
 		A12D03C42DA99B230037BF23 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */; };
 		A12D04202DA9C16B0037BF23 /* HeroDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */; };
@@ -20,6 +20,11 @@
 		A12D046A2DAA61810037BF23 /* TransformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D04682DAA61810037BF23 /* TransformationCell.xib */; };
 		A12D04C62DAA738D0037BF23 /* TransformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04C52DAA73870037BF23 /* TransformationDTO.swift */; };
 		A12D04DE2DAA77080037BF23 /* MOTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D04D62DAA77080037BF23 /* MOTransformation.swift */; };
+		A12D052F2DAAB6C60037BF23 /* TransformationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D052E2DAAB6C60037BF23 /* TransformationDetailView.xib */; };
+		A12D05312DAAB9070037BF23 /* TransformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05302DAAB9070037BF23 /* TransformationDetailViewController.swift */; };
+		A12D05332DAABB3C0037BF23 /* TransformationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05322DAABB2B0037BF23 /* TransformationDetailViewModel.swift */; };
+		A12D05352DAAC2B50037BF23 /* GetHeroTransformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05342DAAC2AC0037BF23 /* GetHeroTransformationUseCase.swift */; };
+		A12D05372DAACAF70037BF23 /* TransformationDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D05362DAACAEB0037BF23 /* TransformationDetailBuilder.swift */; };
 		A15DC4BE2DA5057B00966AC3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A15DC4BD2DA5057B00966AC3 /* KeychainSwift */; };
 		A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */; };
 		A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */; };
@@ -78,7 +83,7 @@
 		A12D03B52DA992210037BF23 /* HeroDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
 		A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
-		A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
+		A12D03BF2DA998E80037BF23 /* GetHeroLocationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroLocationsUseCase.swift; sourceTree = "<group>"; };
 		A12D03C12DA999720037BF23 /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
 		A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailBuilder.swift; sourceTree = "<group>"; };
@@ -87,6 +92,11 @@
 		A12D04682DAA61810037BF23 /* TransformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationCell.xib; sourceTree = "<group>"; };
 		A12D04C52DAA73870037BF23 /* TransformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDTO.swift; sourceTree = "<group>"; };
 		A12D04D62DAA77080037BF23 /* MOTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTransformation.swift; sourceTree = "<group>"; };
+		A12D052E2DAAB6C60037BF23 /* TransformationDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationDetailView.xib; sourceTree = "<group>"; };
+		A12D05302DAAB9070037BF23 /* TransformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailViewController.swift; sourceTree = "<group>"; };
+		A12D05322DAABB2B0037BF23 /* TransformationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailViewModel.swift; sourceTree = "<group>"; };
+		A12D05342DAAC2AC0037BF23 /* GetHeroTransformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroTransformationUseCase.swift; sourceTree = "<group>"; };
+		A12D05362DAACAEB0037BF23 /* TransformationDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailBuilder.swift; sourceTree = "<group>"; };
 		A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
 		A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -181,7 +191,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A12D03B42DA992060037BF23 /* DetailHero */ = {
+		A12D03B42DA992060037BF23 /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
 				A12D04662DAA61400037BF23 /* Cells */,
@@ -190,7 +200,7 @@
 				A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */,
 				A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */,
 			);
-			path = DetailHero;
+			path = HeroDetail;
 			sourceTree = "<group>";
 		};
 		A12D04662DAA61400037BF23 /* Cells */ = {
@@ -200,6 +210,17 @@
 				A12D04682DAA61810037BF23 /* TransformationCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A12D052D2DAAB6310037BF23 /* TransformationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A12D05362DAACAEB0037BF23 /* TransformationDetailBuilder.swift */,
+				A12D05322DAABB2B0037BF23 /* TransformationDetailViewModel.swift */,
+				A12D052E2DAAB6C60037BF23 /* TransformationDetailView.xib */,
+				A12D05302DAAB9070037BF23 /* TransformationDetailViewController.swift */,
+			);
+			path = TransformationDetail;
 			sourceTree = "<group>";
 		};
 		A15DC6BF2DA6740200966AC3 /* HeroList */ = {
@@ -217,7 +238,8 @@
 		A15DC6C42DA67A4200966AC3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */,
+				A12D05342DAAC2AC0037BF23 /* GetHeroTransformationUseCase.swift */,
+				A12D03BF2DA998E80037BF23 /* GetHeroLocationsUseCase.swift */,
 				A15DC6CF2DA68D7200966AC3 /* GetHeroesUseCase.swift */,
 				A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */,
 			);
@@ -320,7 +342,8 @@
 		A18598DC2DA306A9001DCB1B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A12D03B42DA992060037BF23 /* DetailHero */,
+				A12D052D2DAAB6310037BF23 /* TransformationDetail */,
+				A12D03B42DA992060037BF23 /* HeroDetail */,
 				A15DC6BF2DA6740200966AC3 /* HeroList */,
 				A18599D02DA30CBF001DCB1B /* Splash */,
 				A18599D32DA3DD02001DCB1B /* Login */,
@@ -504,6 +527,7 @@
 				A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */,
 				A12D046A2DAA61810037BF23 /* TransformationCell.xib in Resources */,
 				A12D03B62DA992210037BF23 /* HeroDetailView.xib in Resources */,
+				A12D052F2DAAB6C60037BF23 /* TransformationDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +564,7 @@
 				A15DC5BB2DA5696D00966AC3 /* LoginUseCase.swift in Sources */,
 				A18599DC2DA3E4D6001DCB1B /* Binding.swift in Sources */,
 				A15DC6D02DA68D7200966AC3 /* GetHeroesUseCase.swift in Sources */,
+				A12D05332DAABB3C0037BF23 /* TransformationDetailViewModel.swift in Sources */,
 				A18598FA2DA30858001DCB1B /* SplashViewController.swift in Sources */,
 				A15DC6D72DA6CFFF00966AC3 /* Model.xcdatamodeld in Sources */,
 				A15DC5C62DA5744600966AC3 /* NetworingError.swift in Sources */,
@@ -555,9 +580,11 @@
 				A15DC6D92DA6D58600966AC3 /* StoreDataProvider.swift in Sources */,
 				A15DC5C22DA5711200966AC3 /* HTTPMethods.swift in Sources */,
 				A15DC6C92DA67B9000966AC3 /* HeroesListViewModel.swift in Sources */,
+				A12D05352DAAC2B50037BF23 /* GetHeroTransformationUseCase.swift in Sources */,
 				A15DC6D32DA695EF00966AC3 /* HeroDTO.swift in Sources */,
 				A12D04222DAA60980037BF23 /* HeroTransformation.swift in Sources */,
-				A12D03C02DA998F50037BF23 /* HeroDetailUseCase.swift in Sources */,
+				A12D05372DAACAF70037BF23 /* TransformationDetailBuilder.swift in Sources */,
+				A12D03C02DA998F50037BF23 /* GetHeroLocationsUseCase.swift in Sources */,
 				A12D03BE2DA995BF0037BF23 /* HeroDetailViewModel.swift in Sources */,
 				A12D04692DAA61810037BF23 /* TransformationCell.swift in Sources */,
 				A12D04C62DAA738D0037BF23 /* TransformationDTO.swift in Sources */,
@@ -566,6 +593,7 @@
 				A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */,
 				A12D03C22DA999720037BF23 /* HeroLocation.swift in Sources */,
 				A12D02BD2DA987F20037BF23 /* AsyncImage.swift in Sources */,
+				A12D05312DAAB9070037BF23 /* TransformationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,13 +52,7 @@ final class HeroListViewController: UIViewController {
         super.viewDidLoad()
         bind()
         configureCollectionView()
-        viewModel.loadData()
-        
-        
-        
-        
-       
-        
+        viewModel.loadData()   
     }
     
     // MARK: - Actions
@@ -153,7 +147,7 @@ extension HeroListViewController:UICollectionViewDelegate, UICollectionViewDeleg
         
         // Nos vamos al detalle del heroe
         
-        navigationController?.show(heroDetailBuilder(hero: heroSelected).build(), sender: self)
+        navigationController?.show(HeroDetailBuilder(hero: heroSelected).build(), sender: self)
         
         
     }

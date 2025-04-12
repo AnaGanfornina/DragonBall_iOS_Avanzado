@@ -130,9 +130,10 @@ extension HeroDetailViewController: UICollectionViewDelegate, UICollectionViewDe
         guard let transformationSelected = dataSource?.itemIdentifier(for: indexPath) else { return }
         
         // Nos vamos al detalle de Transformación
-        print("nos vamos a transformación \(transformationSelected)")
         
-       // navigationController?.show(, sender: self)
+        present(TransformationDetailBuilder(transformation: transformationSelected).build(), animated: true)
+        
+            
         
         
     }

@@ -6,12 +6,11 @@
 //
 import Foundation
 
-protocol HeroDetailUseCaseProtocol {
+protocol GetHeroLocationsProtocol {
     func fetchLocationForHeroWhith(id: String, completion: @escaping( Result<[HeroLocation], NetworingError>) -> Void)
-    func fetchTransformationForHeroWhith(id: String, completion: @escaping (Result<[HeroTransformation], NetworingError>) -> Void) 
 }
 
-final class HeroDetailUseCase: HeroDetailUseCaseProtocol {
+final class GetHeroLocationsUseCase: GetHeroLocationsProtocol {
     
     private var storeData: StoreDataProvider
     private var apiProvider: ApiProvider
@@ -47,29 +46,6 @@ final class HeroDetailUseCase: HeroDetailUseCaseProtocol {
         }
     }
     
-    func fetchTransformationForHeroWhith(id: String, completion: @escaping (Result<[HeroTransformation], NetworingError>) -> Void) {
-        let transformation = storedTransformationForHeroWith(id: id)
-        
-        // Comprobamos si hay transformaciones en la BBDD
-        
-        if transformation.isEmpty{
-            apiProvider.getTransformation(id: id) { [weak self] result in
-                switch result {
-                case .success(let transformations):
-                    self?.storeData.context.perform {
-                        self?.storeData.isnert(transformations: transformations)
-                        let bdTransformation = self?.storedTransformationForHeroWith(id: id) ?? []
-                        completion(.success(bdTransformation))
-                    }
-                    
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-        } else {
-            completion(.success(transformation))
-        }
-    }
     
     /// Funcion para mapear los objetos de la base de datos MOLocations a un tipo HeroLocation del modelo
     private func storedLocationsForHeroWith(id: String) -> [HeroLocation] {
@@ -82,15 +58,5 @@ final class HeroDetailUseCase: HeroDetailUseCaseProtocol {
         return locations.map({$0.mapToHeroLocation()})
     }
     
-    /// Funcion para mapear los objetos de la base de datos MOTransforamtion a un tipo HeroTransformation del modelo
-    private func storedTransformationForHeroWith(id: String) -> [HeroTransformation] {
-        let predicate = NSPredicate(format: "identifier == %@", id)
-        
-        guard let hero = storeData.fetchHeroes(filter: predicate).first,
-              let transformations = hero.transformation else {return []}
-        
-        return transformations.map({$0.mapToTransformation()})
-        
-        
-    }
+    
 }
