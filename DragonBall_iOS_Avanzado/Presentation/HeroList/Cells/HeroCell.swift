@@ -12,14 +12,17 @@ class HeroCell: UICollectionViewCell {
     static let identifier = String(describing: HeroCell.self)
 
     // MARK: - Outlets
-    @IBOutlet weak private var heroImage: UIImageView!
+    @IBOutlet weak private var heroImage: AsyncImage!
     @IBOutlet weak private var heroNameLabel: UILabel!
     
     // MARK: - Configuration
     func configure(with hero: Hero) {
-        // heroImage.image
+        
+        heroImage.setImage(hero.photo ?? "")
         heroNameLabel.text = hero.name
-        // TODO: Posibilidad de añadir radius corner layer.cornerRadius = 12
+        layer.cornerRadius = 12
+        
+    
     }
     
 

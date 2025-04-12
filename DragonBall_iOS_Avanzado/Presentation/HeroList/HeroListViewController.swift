@@ -37,13 +37,6 @@ final class HeroListViewController: UIViewController {
     init(viewModel: HeroesListViewModel) {
         self.viewModel = viewModel
          
-        /*
-        // Configuramos la forma de la rejilla
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.scrollDirection = .vertical
-        super.init(collectionViewLayout: layout)
-         */
         super.init(nibName: "HeroListView", bundle: Bundle(for: type(of: self)))
          
         
@@ -95,6 +88,15 @@ final class HeroListViewController: UIViewController {
     
     private func configureCollectionView(){
         collectionView.delegate = self
+        
+        // configuramos los margenes de la rejilla
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            layout.minimumInteritemSpacing = 8
+            layout.minimumLineSpacing = 16
+        }
+        
         // Usamos un CellRegistration para crear las celdas  una ventaja que tiene es que si usamos el objeto como
         // identificador ya nos viene en el handler y no necesitamos acceder a él por su indexPath
         let nib = UINib(nibName: HeroCell.identifier, bundle: nil)
@@ -118,7 +120,7 @@ final class HeroListViewController: UIViewController {
     private func renderSuccess(){
         
         self.heroes = viewModel.heroes
-        print(heroes)
+        
         // Creacion del snapshot
         
         var snapshot = Snapshot()
@@ -138,8 +140,21 @@ extension HeroListViewController:UICollectionViewDelegate, UICollectionViewDeleg
     ) -> CGSize {
         
         let columNumber: CGFloat = 2
-        let width = (collectionView.frame.size.width - 32) / columNumber
+        
+        
+        let width = (collectionView.frame.width - 32) / columNumber
         return CGSize(width: width, height: 125)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let heroSelected = dataSource?.itemIdentifier(for: indexPath) else { return }
+        
+        // Nos vamos al detalle del heroe
+        
+        navigationController?.show(heroDetailBuilder(hero: heroSelected).build(), sender: self)
+        
+        
     }
 }
 

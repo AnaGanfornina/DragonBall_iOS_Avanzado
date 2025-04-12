@@ -72,6 +72,14 @@ struct ApiProvider {
         
         // MARK: - Funcion para devolver las localizaciones
         
+    func getLocationsForHeroSith(id: String, completion: @escaping (Result<[HeroLocationDTO], NetworingError>) -> Void) {
+        do {
+            let request = try requestBuilder.build(endpoint: .locations(id: id))
+            manageResponse(request: request, completion: completion)
+        } catch {
+            completion(.failure(error))
+        }
+    }
         
         // MARK: - Función para manegar las respuesstas de la api
         

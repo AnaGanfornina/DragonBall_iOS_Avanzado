@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12D02BD2DA987F20037BF23 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D02BC2DA987F20037BF23 /* AsyncImage.swift */; };
+		A12D03B62DA992210037BF23 /* HeroDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D03B52DA992210037BF23 /* HeroDetailView.xib */; };
+		A12D03B82DA994640037BF23 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */; };
+		A12D03BE2DA995BF0037BF23 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */; };
+		A12D03C02DA998F50037BF23 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */; };
+		A12D03C22DA999720037BF23 /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C12DA999720037BF23 /* HeroLocation.swift */; };
+		A12D03C42DA99B230037BF23 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */; };
+		A12D04202DA9C16B0037BF23 /* HeroDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */; };
 		A15DC4BE2DA5057B00966AC3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A15DC4BD2DA5057B00966AC3 /* KeychainSwift */; };
 		A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */; };
 		A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */; };
@@ -62,6 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A12D02BC2DA987F20037BF23 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		A12D03B52DA992210037BF23 /* HeroDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
+		A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
+		A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
+		A12D03C12DA999720037BF23 /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
+		A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
+		A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailBuilder.swift; sourceTree = "<group>"; };
 		A15DC4BF2DA5058800966AC3 /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
 		A15DC5B82DA50C9F00966AC3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -141,6 +157,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A12D02BA2DA982550037BF23 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A12D02BB2DA982630037BF23 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A12D02BB2DA982630037BF23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A12D02BC2DA987F20037BF23 /* AsyncImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A12D03B42DA992060037BF23 /* DetailHero */ = {
+			isa = PBXGroup;
+			children = (
+				A12D03BD2DA995B90037BF23 /* HeroDetailViewModel.swift */,
+				A12D03B52DA992210037BF23 /* HeroDetailView.xib */,
+				A12D03B72DA994640037BF23 /* HeroDetailViewController.swift */,
+				A12D041F2DA9C1660037BF23 /* HeroDetailBuilder.swift */,
+			);
+			path = DetailHero;
+			sourceTree = "<group>";
+		};
 		A15DC5E92DA57F2B00966AC3 /* APIRequests */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +207,7 @@
 		A15DC6C42DA67A4200966AC3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				A12D03BF2DA998E80037BF23 /* HeroDetailUseCase.swift */,
 				A15DC6CF2DA68D7200966AC3 /* GetHeroesUseCase.swift */,
 				A15DC5BA2DA5696D00966AC3 /* LoginUseCase.swift */,
 			);
@@ -174,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				A15DC6C62DA67A5F00966AC3 /* Hero.swift */,
+				A12D03C12DA999720037BF23 /* HeroLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +235,7 @@
 		A15DC6D12DA695D600966AC3 /* ApiModel */ = {
 			isa = PBXGroup;
 			children = (
+				A12D03C32DA99B1F0037BF23 /* LocationDTO.swift */,
 				A15DC6D22DA695EF00966AC3 /* HeroDTO.swift */,
 			);
 			path = ApiModel;
@@ -229,6 +275,7 @@
 		A185984C2DA303E2001DCB1B /* DragonBall_iOS_Avanzado */ = {
 			isa = PBXGroup;
 			children = (
+				A12D02BA2DA982550037BF23 /* Components */,
 				A18598F32DA30782001DCB1B /* SupportingFiles */,
 				A18598DA2DA3069E001DCB1B /* Data */,
 				A18598DB2DA306A4001DCB1B /* Domain */,
@@ -261,6 +308,7 @@
 		A18598DC2DA306A9001DCB1B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A12D03B42DA992060037BF23 /* DetailHero */,
 				A15DC6BF2DA6740200966AC3 /* HeroList */,
 				A18599D02DA30CBF001DCB1B /* Splash */,
 				A18599D32DA3DD02001DCB1B /* Login */,
@@ -442,6 +490,7 @@
 				A18599D52DA3DD1C001DCB1B /* LoginView.xib in Resources */,
 				A18598F82DA30782001DCB1B /* LaunchScreen.storyboard in Resources */,
 				A15DC6C12DA6746900966AC3 /* HeroListView.xib in Resources */,
+				A12D03B62DA992210037BF23 /* HeroDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,13 +536,20 @@
 				A15DC5F32DA58F6D00966AC3 /* ApiProvider.swift in Sources */,
 				A18599CB2DA309C6001DCB1B /* SplashViewModel.swift in Sources */,
 				A15DC5B92DA50CA700966AC3 /* LoginBuilder.swift in Sources */,
+				A12D03B82DA994640037BF23 /* HeroDetailViewController.swift in Sources */,
 				A15DC5F12DA584DA00966AC3 /* LoginApiRequest.swift in Sources */,
 				A18599D92DA3E150001DCB1B /* LoginViewModel.swift in Sources */,
 				A15DC6D92DA6D58600966AC3 /* StoreDataProvider.swift in Sources */,
 				A15DC5C22DA5711200966AC3 /* HTTPMethods.swift in Sources */,
 				A15DC6C92DA67B9000966AC3 /* HeroesListViewModel.swift in Sources */,
 				A15DC6D32DA695EF00966AC3 /* HeroDTO.swift in Sources */,
+				A12D03C02DA998F50037BF23 /* HeroDetailUseCase.swift in Sources */,
+				A12D03BE2DA995BF0037BF23 /* HeroDetailViewModel.swift in Sources */,
+				A12D03C42DA99B230037BF23 /* LocationDTO.swift in Sources */,
+				A12D04202DA9C16B0037BF23 /* HeroDetailBuilder.swift in Sources */,
 				A15DC4C02DA5059500966AC3 /* SecureDataProvider.swift in Sources */,
+				A12D03C22DA999720037BF23 /* HeroLocation.swift in Sources */,
+				A12D02BD2DA987F20037BF23 /* AsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +716,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -715,6 +772,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

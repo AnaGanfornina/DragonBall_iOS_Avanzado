@@ -31,7 +31,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cm-h3-pOJ">
-                    <rect key="frame" x="333" y="49" width="44" height="44"/>
+                    <rect key="frame" x="333" y="57" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ENk-83-Db0"/>
                         <constraint firstAttribute="width" constant="44" id="huw-Bq-OqQ"/>
@@ -55,11 +55,12 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="k0H-mb-7Bg" secondAttribute="trailing" id="43m-ZY-ysp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9cm-h3-pOJ" secondAttribute="trailing" constant="16" id="5EZ-dh-Ycb"/>
                 <constraint firstItem="k0H-mb-7Bg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Xg-XD-fwx"/>
+                <constraint firstItem="9cm-h3-pOJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="57" id="Bq4-rI-cyI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k0H-mb-7Bg" secondAttribute="bottom" id="CkZ-c4-tcd"/>
                 <constraint firstItem="k0H-mb-7Bg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="H4n-RX-2Gs"/>
                 <constraint firstItem="Kbh-Eo-1RS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O3j-GA-TPb"/>
                 <constraint firstItem="Kbh-Eo-1RS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="evs-Jt-oEo"/>
-                <constraint firstItem="k0H-mb-7Bg" firstAttribute="top" secondItem="9cm-h3-pOJ" secondAttribute="bottom" constant="16" id="zed-r0-bkb"/>
+                <constraint firstItem="k0H-mb-7Bg" firstAttribute="top" secondItem="9cm-h3-pOJ" secondAttribute="bottom" constant="8" id="zed-r0-bkb"/>
             </constraints>
             <point key="canvasLocation" x="135" y="20"/>
         </view>

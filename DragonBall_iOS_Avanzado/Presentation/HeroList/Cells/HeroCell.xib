@@ -17,14 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="269" height="257"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="BsG-cV-fPe">
-                        <rect key="frame" x="16" y="16" width="239" height="225"/>
+                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="BsG-cV-fPe">
+                        <rect key="frame" x="0.0" y="0.0" width="269" height="251"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-pJ-i3l">
-                                <rect key="frame" x="0.0" y="0.0" width="239" height="180"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-pJ-i3l">
+                                <rect key="frame" x="0.0" y="0.0" width="269" height="180"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tse-eL-nys">
-                                <rect key="frame" x="97.333333333333329" y="197" width="44.333333333333329" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tse-eL-nys">
+                                <rect key="frame" x="0.0" y="197" width="269" height="54"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,9 +36,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="BsG-cV-fPe" secondAttribute="bottom" constant="16" id="OW6-1O-tXG"/>
-                <constraint firstItem="BsG-cV-fPe" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Zx7-xW-E6c"/>
-                <constraint firstItem="BsG-cV-fPe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="hd6-rw-iin"/>
+                <constraint firstItem="BsG-cV-fPe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fjK-uJ-JLo"/>
+                <constraint firstItem="BsG-cV-fPe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hPV-Vb-fVp"/>
+                <constraint firstAttribute="trailing" secondItem="BsG-cV-fPe" secondAttribute="trailing" id="jN1-k6-NYc"/>
+                <constraint firstAttribute="bottom" secondItem="BsG-cV-fPe" secondAttribute="bottom" constant="6" id="xGE-gQ-HgP"/>
             </constraints>
             <size key="customSize" width="269" height="257"/>
             <connections>

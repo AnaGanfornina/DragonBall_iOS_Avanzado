@@ -93,7 +93,24 @@ extension StoreDataProvider {
         // ... hasta que no guardamos
         saveContext()
     }
-    // TODO: Función de insertar locations
+    // Inserta localizaciones de heroes en contexto y persiste en BBDD con saveContext()
+    func insert(locations: [HeroLocationDTO]){
+        for location in locations {
+            let newLocation = MOHeroLocation(context: context)
+            newLocation.identifier = location.id
+            newLocation.latitude = location.latitude
+            newLocation.longitude = location.longitude
+            newLocation.date = location.date
+            
+            // asocia un héroe a la localización
+            if let identifier = location.hero?.id {
+                // Trae de la BBDD el heroe con ese id y lo metes en newLocation.hero
+                let predicate = NSPredicate(format: "identifier == %@", identifier)
+                newLocation.hero = fetchHeroes(filter: predicate).first
+            }
+        }
+        saveContext()
+    }
     
     func clearBBDD(){
         // Quitamos los cambios pendientes que haya en el contexto

@@ -26,7 +26,7 @@ extension MOHero {
     @NSManaged public var name: String?
     @NSManaged public var identifier: String?
     // La relacion con el hero lo hace como otro atributo mas
-    @NSManaged public var locations: Set<MOHeroLocation> // Usamos set en vez de un array para que no haya duplicados
+    @NSManaged public var locations: Set<MOHeroLocation>? // Usamos set en vez de un array para que no haya duplicados
 }
 
 // MARK: Generated accessors for locations
