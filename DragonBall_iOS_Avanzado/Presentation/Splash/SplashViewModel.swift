@@ -10,7 +10,8 @@ import UIKit
 enum SplashState {
     case loading
     case error
-    case ready
+    case readyToLogin
+    case readyToList
 }
 
 final class SplashViewModel: UIViewController {
@@ -30,13 +31,13 @@ final class SplashViewModel: UIViewController {
             // let heroesVC = HeroesViewController()
             print("Iríamos al listado de personajes")
             
-            onStateChanged.update(.ready)
+            onStateChanged.update(.readyToList)
             
         } else {
             
             //et loginViewController = LoginBuilder().build()
             print("nos vamos al login")
-            onStateChanged.update(.ready)
+            onStateChanged.update(.readyToLogin)
             //navigationController?.setViewControllers([loginViewController], animated: true)
              
            

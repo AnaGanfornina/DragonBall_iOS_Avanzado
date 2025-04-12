@@ -51,8 +51,9 @@ final class HeroListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        viewModel.loadData()
         configureCollectionView()
+        viewModel.loadData()
+        
         
         
         
