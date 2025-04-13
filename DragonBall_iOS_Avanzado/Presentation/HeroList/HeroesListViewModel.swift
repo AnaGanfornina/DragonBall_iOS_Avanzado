@@ -56,4 +56,10 @@ class HeroesListViewModel {
         storeData.clearBBDD()
     }
     
+//    func heroWith(index: Int) -> Hero? {
+//        guard index < heroes.count else { return nil }
+//        
+//        return heroes[index]
+//    }
+    
 }

@@ -19,7 +19,7 @@ final class HeroDetailViewController: UIViewController {
     private let viewModel: HeroDetailViewModel
     
     // MARK: - Outlets
-    @IBOutlet private weak var heroLocation: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var heroDescriptionTextView: UITextView!
     @IBOutlet private weak var heroTransformationCollectionView: UICollectionView!
     
@@ -52,6 +52,8 @@ final class HeroDetailViewController: UIViewController {
         configureCollectionView()
         viewModel.loadDataHero()
         viewModel.loadDataTransformation()
+        viewModel.loadDataLocations()
+        
         
         
     }
@@ -73,7 +75,22 @@ final class HeroDetailViewController: UIViewController {
         dataSource = DataSource(collectionView: heroTransformationCollectionView, cellProvider: { collectionView, indexPath, transformation in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: transformation)
         })
+    }
+    // MARK: - Funciones para el mapa
+    
+    func addAnnotationToMap() {
         
+        // nos aseguramos de tener las anotaciones en limpio
+        let annotations = mapView.annotations
+        if !annotations.isEmpty {
+            mapView.removeAnnotations(annotations)
+        }
+        mapView.addAnnotations(viewModel.annotations)
+        if let annotation = mapView.annotations.sorted(by: {$0.coordinate.latitude > $1.coordinate.latitude}).first {
+            mapView.region = MKCoordinateRegion(center: annotation.coordinate,
+                                                latitudinalMeters: 100_000,
+                                                longitudinalMeters: 100_000)
+        }
         
     }
     
@@ -112,13 +129,18 @@ final class HeroDetailViewController: UIViewController {
         snapshot.appendSections([.transformations])
         snapshot.appendItems(transformations)
         dataSource?.applySnapshotUsingReloadData(snapshot)
+        
+        // Para el mapa
+        mapView.delegate = self
+        addAnnotationToMap()
+        
     }
     
 }
 
 
 // MARK: - CollectionViewLayout
-extension HeroDetailViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HeroDetailViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,  MKMapViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //return CGSize(width: collectionView.bounds.size.width, height: 80.0)
@@ -132,11 +154,11 @@ extension HeroDetailViewController: UICollectionViewDelegate, UICollectionViewDe
         // Nos vamos al detalle de Transformación
         
         present(TransformationDetailBuilder(transformation: transformationSelected).build(), animated: true)
-        
-            
-        
-        
     }
+    
+    // Configuración del delegado para el mapView
+    
+    
 }
 
 

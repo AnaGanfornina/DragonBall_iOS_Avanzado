@@ -147,6 +147,7 @@ extension StoreDataProvider {
         // creamos los procesos batch de borrado, estos procesos se ejecutan  contra el Store, la BBDD  y no en el contexto.
         let deleteHeroes = NSBatchDeleteRequest(fetchRequest: MOHero.fetchRequest())
         let deleteHeroLocations =  NSBatchDeleteRequest(fetchRequest: MOHeroLocation.fetchRequest())
+        let deleteHeroTransformation =  NSBatchDeleteRequest(fetchRequest: MOTransformation.fetchRequest())
         
         for task in [deleteHeroes,deleteHeroLocations]{
             do {

@@ -27,7 +27,7 @@ final class GetHeroLocationsUseCase: GetHeroLocationsProtocol {
         // Comprobamos si hay localizaciones en la BBDD
         
         if locationsHero.isEmpty {
-            apiProvider.getLocationsForHeroSith(id: id) {[weak self] result in
+            apiProvider.getLocationsForHeroWhith(id: id) {[weak self] result in
                 switch result {
                 case .success(let locations):
                     
@@ -51,7 +51,7 @@ final class GetHeroLocationsUseCase: GetHeroLocationsProtocol {
     private func storedLocationsForHeroWith(id: String) -> [HeroLocation] {
         let predicate = NSPredicate(format: "identifier == %@", id)
         
-        guard let hero = storeData.fetchHeroes(filter: predicate).first,
+        guard let hero = storeData.fetchHeroes(filter: predicate).first, // Esto lo hacemos para evitar hacer un fetchLocations
               let locations = hero.locations else {
             return []
         }

@@ -15,7 +15,7 @@ final class LoginViewController : UIViewController {
     
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
-    
+    @IBOutlet private weak var errorLabel: UILabel!
     // MARK: - Initializer
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -30,7 +30,7 @@ final class LoginViewController : UIViewController {
     
     /// Para emitir enventos al ViewModel, cuando pulse el botón la vista invoca el proceso de login del ViewModel
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        viewModel.login(username: "", password: "")
+        viewModel.login(username: nameField.text, password: passwordField.text)
     }
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,12 +69,17 @@ final class LoginViewController : UIViewController {
     }
     private func renderLoading() {
         // TODO: poner aqui algo como un simbolo cargando o algo asi
+        //nameField.isHidden = false
+        //passwordField.isEnabled = false
+        errorLabel.isHidden = true
         
        
     }
     
     private func renderError(_ message: String){
-        // TODO: sacar un cartel o una ventana flotante
+        errorLabel.text = message
+        errorLabel.isHidden = false
+        
     }
     
 }

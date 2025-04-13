@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DragonBall_iOS_Avanzado" customModuleProvider="target">
             <connections>
+                <outlet property="errorLabel" destination="dZS-Uk-Ade" id="YaN-yP-IiV"/>
                 <outlet property="nameField" destination="gpD-iH-ng0" id="zVh-Kc-Znh"/>
                 <outlet property="passwordField" destination="nvE-5c-liN" id="sVm-Yy-tfH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="S5W-ZQ-5mH"/>
@@ -23,8 +24,8 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fondo_Login" translatesAutoresizingMaskIntoConstraints="NO" id="3Gt-1v-FaH">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-Vi-K5L">
-                    <rect key="frame" x="30" y="257" width="333" height="182.33333333333337"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-Vi-K5L">
+                    <rect key="frame" x="30" y="257" width="333" height="154.33333333333337"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpD-iH-ng0">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
@@ -35,15 +36,22 @@
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvE-5c-liN">
-                            <rect key="frame" x="0.0" y="74" width="333" height="44"/>
+                            <rect key="frame" x="0.0" y="60" width="333" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="8bj-RR-Ig9"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" textContentType="password"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                         </textField>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZS-Uk-Ade">
+                            <rect key="frame" x="0.0" y="112" width="333" height="0.0"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eB-kN-Nd3">
-                            <rect key="frame" x="0.0" y="148" width="333" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="119.99999999999999" width="333" height="34.333333333333329"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Login"/>
                             <connections>
@@ -72,6 +80,9 @@
         <image name="Fondo_Login" width="1060" height="700"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
