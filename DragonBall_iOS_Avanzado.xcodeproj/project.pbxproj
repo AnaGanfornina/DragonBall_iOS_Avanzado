@@ -67,6 +67,8 @@
 		A18599D92DA3E150001DCB1B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18599D82DA3E150001DCB1B /* LoginViewModel.swift */; };
 		A18599DC2DA3E4D6001DCB1B /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18599DB2DA3E4D6001DCB1B /* Binding.swift */; };
 		A1EE16A72DABC52000C64CA9 /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE16A62DABC52000C64CA9 /* HeroAnnotation.swift */; };
+		A1EE16AF2DAC634200C64CA9 /* HeroesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE16AE2DAC634200C64CA9 /* HeroesUseCaseTest.swift */; };
+		A1EE16B32DAC646500C64CA9 /* HeroesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE16B22DAC646500C64CA9 /* HeroesViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		A18599D82DA3E150001DCB1B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A18599DB2DA3E4D6001DCB1B /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		A1EE16A62DABC52000C64CA9 /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
+		A1EE16AE2DAC634200C64CA9 /* HeroesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseTest.swift; sourceTree = "<group>"; };
+		A1EE16B22DAC646500C64CA9 /* HeroesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -238,6 +242,8 @@
 		A12D05392DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests */ = {
 			isa = PBXGroup;
 			children = (
+				A1EE16B02DAC641500C64CA9 /* Presentation */,
+				A1EE16AC2DAC630A00C64CA9 /* Domain */,
 				A12D05472DAAF1940037BF23 /* Networking */,
 				A12D053B2DAAE1820037BF23 /* Data */,
 				A12D05382DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift */,
@@ -472,6 +478,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A1EE16AC2DAC630A00C64CA9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A1EE16AD2DAC631A00C64CA9 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1EE16AD2DAC631A00C64CA9 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A1EE16AE2DAC634200C64CA9 /* HeroesUseCaseTest.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A1EE16B02DAC641500C64CA9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A1EE16B12DAC641F00C64CA9 /* HeroList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A1EE16B12DAC641F00C64CA9 /* HeroList */ = {
+			isa = PBXGroup;
+			children = (
+				A1EE16B22DAC646500C64CA9 /* HeroesViewModelTest.swift */,
+			);
+			path = HeroList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,6 +714,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12D05422DAAE2330037BF23 /* StoreProviderTest.swift in Sources */,
+				A1EE16AF2DAC634200C64CA9 /* HeroesUseCaseTest.swift in Sources */,
+				A1EE16B32DAC646500C64CA9 /* HeroesViewModelTest.swift in Sources */,
 				A12D053A2DAAE17F0037BF23 /* DragonBall_iOS_AvanzadoTests.swift in Sources */,
 				A12D05592DAB225F0037BF23 /* MockSecureDataProvider.swift in Sources */,
 				A12D05492DAAF1E20037BF23 /* ApiProviderTest.swift in Sources */,
