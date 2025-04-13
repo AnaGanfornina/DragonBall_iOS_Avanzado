@@ -36,7 +36,7 @@ final class SplashViewModel: UIViewController {
         } else {
             
             //et loginViewController = LoginBuilder().build()
-            print("nos vamos al login")
+            
             onStateChanged.update(.readyToLogin)
             //navigationController?.setViewControllers([loginViewController], animated: true)
              
