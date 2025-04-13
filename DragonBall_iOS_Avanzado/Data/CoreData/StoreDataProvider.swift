@@ -149,7 +149,7 @@ extension StoreDataProvider {
         let deleteHeroLocations =  NSBatchDeleteRequest(fetchRequest: MOHeroLocation.fetchRequest())
         let deleteHeroTransformation =  NSBatchDeleteRequest(fetchRequest: MOTransformation.fetchRequest())
         
-        for task in [deleteHeroes,deleteHeroLocations]{
+        for task in [deleteHeroes,deleteHeroLocations,deleteHeroTransformation]{
             do {
                 try context.execute(task)
             } catch {
